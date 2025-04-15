@@ -1,0 +1,22 @@
+{
+  "liabilityInsuranceLimit": 1000000,
+  "liabilityInsuranceSymbol": 1,
+  "medicalPaymentsLimit": null,
+  "medicalPaymentsSymbol": null,
+  "uninsuredMotoristLimit": null,
+  "uninsuredMotoristSymbol": 2,
+  "underinsuredMotoristLimit": null,
+  "underinsuredMotoristSymbol": 2,
+  "personalInjuryProtectionLimit": null,
+  "personalInjuryProtectionSymbol": 5,
+  "hiredAutoLimit": null,
+  "hiredAutoSymbol": null,
+  "nonOwnedAutoLiabilityLimit": null,
+  "nonOwnedAutoLiabilitySymbol": null,
+  "collisionLimit": null,
+  "collisionDeductible": 1000,
+  "comprehensiveLimit": null,
+  "comprehensiveDeductible": 1000,
+  "driverSchedule": [],
+  "vehicleSchedule": []
+}

@@ -1,0 +1,175 @@
+{
+  "liabilityInsuranceLimit": 1000000,
+  "liabilityInsuranceSymbol": 7,
+  "medicalPaymentsLimit": 5000,
+  "medicalPaymentsSymbol": 7,
+  "uninsuredMotoristLimit": 1000000,
+  "uninsuredMotoristSymbol": 10,
+  "underinsuredMotoristLimit": 1000000,
+  "underinsuredMotoristSymbol": 7,
+  "personalInjuryProtectionLimit": null,
+  "personalInjuryProtectionSymbol": 7,
+  "hiredAutoLimit": null,
+  "hiredAutoSymbol": null,
+  "nonOwnedAutoLiabilityLimit": null,
+  "nonOwnedAutoLiabilitySymbol": null,
+  "collisionLimit": 250000,
+  "collisionDeductible": 2500,
+  "comprehensiveLimit": 250000,
+  "comprehensiveDeductible": 2500,
+  "driverSchedule": [],
+  "vehicleSchedule": [
+    {
+      "year": "1997",
+      "make": "PETERBILT",
+      "model": "",
+      "vin": "12345",
+      "vehiclePremium": 2431,
+      "vehicleCost": 250000
+    },
+    {
+      "year": "2000",
+      "make": "FORD",
+      "model": "",
+      "vin": "12345",
+      "vehiclePremium": 1562,
+      "vehicleCost": null
+    },
+    {
+      "year": "2000",
+      "make": "FREIGHTLINER",
+      "model": "",
+      "vin": "12345",
+      "vehiclePremium": 3636,
+      "vehicleCost": 60000
+    },
+    {
+      "year": "2001",
+      "make": "FORD",
+      "model": "",
+      "vin": "12345",
+      "vehiclePremium": 2450,
+      "vehicleCost": 32675
+    },
+    {
+      "year": "2005",
+      "make": "FORD",
+      "model": "",
+      "vin": "12345",
+      "vehiclePremium": 2634,
+      "vehicleCost": 35775
+    },
+    {
+      "year": "2006",
+      "make": "FORD",
+      "model": "",
+      "vin": "12345",
+      "vehiclePremium": 2446,
+      "vehicleCost": 27760
+    },
+    {
+      "year": "2009",
+      "make": "PETERBILT",
+      "model": "",
+      "vin": "12345",
+      "vehiclePremium": 7089,
+      "vehicleCost": 132360
+    },
+    {
+      "year": "2011",
+      "make": "FORD",
+      "model": "",
+      "vin": "12345",
+      "vehiclePremium": 2607,
+      "vehicleCost": 34775
+    },
+    {
+      "year": "2012",
+      "make": "FORD",
+      "model": "",
+      "vin": "12345",
+      "vehiclePremium": 2776,
+      "vehicleCost": 41075
+    },
+    {
+      "year": "2014",
+      "make": "FORD",
+      "model": "",
+      "vin": "12345",
+      "vehiclePremium": 3284,
+      "vehicleCost": 60111
+    },
+    {
+      "year": "2009",
+      "make": "FREIGHTLINER",
+      "model": "",
+      "vin": "12345",
+      "vehiclePremium": 8249,
+      "vehicleCost": 161990
+    },
+    {
+      "year": "2015",
+      "make": "FORD",
+      "model": "",
+      "vin": "12345",
+      "vehiclePremium": 3063,
+      "vehicleCost": 51830
+    },
+    {
+      "year": "1993",
+      "make": "UTILITY",
+      "model": "",
+      "vin": "12345",
+      "vehiclePremium": 723,
+      "vehicleCost": 20000
+    },
+    {
+      "year": "1997",
+      "make": "TRAILNOR TRAILER",
+      "model": "",
+      "vin": "47616",
+      "vehiclePremium": null,
+      "vehicleCost": 20000
+    },
+    {
+      "year": "2008",
+      "make": "LOAD TRAILER",
+      "model": "",
+      "vin": "12345",
+      "vehiclePremium": 806,
+      "vehicleCost": 25000
+    },
+    {
+      "year": "2007",
+      "make": "SNOWBIRD TRAILER",
+      "model": "",
+      "vin": "12345",
+      "vehiclePremium": 806,
+      "vehicleCost": 25000
+    },
+    {
+      "year": "2009",
+      "make": "TRICKER TRAILER",
+      "model": "",
+      "vin": "12345",
+      "vehiclePremium": 438,
+      "vehicleCost": 4000
+    },
+    {
+      "year": "2009",
+      "make": "SNOWBIRD TRAILER",
+      "model": "",
+      "vin": "12345",
+      "vehiclePremium": 806,
+      "vehicleCost": 25000
+    },
+    {
+      "year": "1999",
+      "make": "FONTAINE",
+      "model": "",
+      "vin": "12345",
+      "vehiclePremium": 567,
+      "vehicleCost": 12000
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "liabilityInsuranceLimit": 1000000,
+  "liabilityInsuranceSymbol": 1,
+  "medicalPaymentsLimit": 5000,
+  "medicalPaymentsSymbol": 7,
+  "uninsuredMotoristLimit": null,
+  "uninsuredMotoristSymbol": null,
+  "underinsuredMotoristLimit": null,
+  "underinsuredMotoristSymbol": null,
+  "personalInjuryProtectionLimit": null,
+  "personalInjuryProtectionSymbol": null,
+  "hiredAutoLimit": 50000,
+  "hiredAutoSymbol": null,
+  "nonOwnedAutoLiabilityLimit": null,
+  "nonOwnedAutoLiabilitySymbol": null,
+  "collisionLimit": null,
+  "collisionDeductible": 1000,
+  "comprehensiveLimit": null,
+  "comprehensiveDeductible": 100,
+  "driverSchedule": [],
+  "vehicleSchedule": [
+    {
+      "year": "2021",
+      "make": "CHEVY",
+      "model": "2500HD",
+      "vin": "123456789",
+      "vehicleCost": 38445,
+      "vehiclePremium": 2430
+    },
+    {
+      "year": "2021",
+      "make": "CHEVY",
+      "model": "2500HD",
+      "vin": "123456789",
+      "vehicleCost": 38445,
+      "vehiclePremium": 2430
+    },
+    {
+      "year": "2012",
+      "make": "CHEVY",
+      "model": "C2500",
+      "vin": "123456789",
+      "vehicleCost": 27300,
+      "vehiclePremium": 2309
+    },
+    {
+      "year": "2020",
+      "make": "DITCH",
+      "model": "TRAILER",
+      "vin": "123456789",
+      "vehicleCost": 5000,
+      "vehiclePremium": 229
+    },
+    {
+      "year": "2011",
+      "make": "TRAIL",
+      "model": "TRAILER",
+      "vin": "123456789",
+      "vehicleCost": 5000,
+      "vehiclePremium": 229
+    },
+    {
+      "year": "2000",
+      "make": "FREIGH",
+      "model": "FL-70",
+      "vin": "123456789",
+      "vehicleCost": 53623,
+      "vehiclePremium": 2633
+    },
+    {
+      "year": "2006",
+      "make": "FORD",
+      "model": "F650SD",
+      "vin": "123456789",
+      "vehicleCost": 47645,
+      "vehiclePremium": 2633
+    },
+    {
+      "year": "1989",
+      "make": "PETERB",
+      "model": "377",
+      "vin": "123456789",
+      "vehicleCost": 83570,
+      "vehiclePremium": 6420
+    }
+  ]
+}

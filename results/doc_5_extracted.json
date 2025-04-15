@@ -1,0 +1,142 @@
+{
+  "liabilityInsuranceLimit": 1000000,
+  "liabilityInsuranceSymbol": 1,
+  "medicalPaymentsLimit": 5000,
+  "medicalPaymentsSymbol": 2,
+  "uninsuredMotoristLimit": 1000000,
+  "uninsuredMotoristSymbol": 2,
+  "underinsuredMotoristLimit": 1000000,
+  "underinsuredMotoristSymbol": 2,
+  "personalInjuryProtectionLimit": null,
+  "personalInjuryProtectionSymbol": null,
+  "hiredAutoLimit": null,
+  "hiredAutoSymbol": null,
+  "nonOwnedAutoLiabilityLimit": null,
+  "nonOwnedAutoLiabilitySymbol": null,
+  "collisionLimit": null,
+  "collisionDeductible": 1000,
+  "comprehensiveLimit": null,
+  "comprehensiveDeductible": 500,
+  "driverSchedule": [
+    {
+      "fullName": "Brad Pitt",
+      "dateOfBirth": null,
+      "licenseNumber": null
+    },
+    {
+      "fullName": "Lucy Liu",
+      "dateOfBirth": null,
+      "licenseNumber": null
+    },
+    {
+      "fullName": "Adam Brody",
+      "dateOfBirth": null,
+      "licenseNumber": null
+    },
+    {
+      "fullName": "Blake Lively",
+      "dateOfBirth": null,
+      "licenseNumber": null
+    },
+    {
+      "fullName": "Jake Tapper",
+      "dateOfBirth": null,
+      "licenseNumber": null
+    },
+    {
+      "fullName": "Robin Roberts",
+      "dateOfBirth": null,
+      "licenseNumber": null
+    }
+  ],
+  "vehicleSchedule": [
+    {
+      "year": "2018",
+      "make": "GMC",
+      "model": "YUKON",
+      "vin": null,
+      "vehiclePremium": 2530.0,
+      "vehicleCost": 60130.0
+    },
+    {
+      "year": "2007",
+      "make": "GMC",
+      "model": "YUKON",
+      "vin": null,
+      "vehiclePremium": 2866.0,
+      "vehicleCost": 47115.0
+    },
+    {
+      "year": "2020",
+      "make": "FORD",
+      "model": "TRANSIT",
+      "vin": null,
+      "vehiclePremium": 2226.0,
+      "vehicleCost": 54840.0
+    },
+    {
+      "year": "2020",
+      "make": "FORD",
+      "model": "TRANSIT",
+      "vin": null,
+      "vehiclePremium": 2226.0,
+      "vehicleCost": 54840.0
+    },
+    {
+      "year": "2020",
+      "make": "FORD",
+      "model": "TRANSIT",
+      "vin": null,
+      "vehiclePremium": 2226.0,
+      "vehicleCost": 46592.0
+    },
+    {
+      "year": "2021",
+      "make": "FORD",
+      "model": "TRANSIT",
+      "vin": null,
+      "vehiclePremium": 2618.0,
+      "vehicleCost": 53545.0
+    },
+    {
+      "year": "2021",
+      "make": "FORD",
+      "model": "F150",
+      "vin": null,
+      "vehiclePremium": 2226.0,
+      "vehicleCost": 45195.0
+    },
+    {
+      "year": "2021",
+      "make": "FORD",
+      "model": "F150",
+      "vin": null,
+      "vehiclePremium": 2226.0,
+      "vehicleCost": 45195.0
+    },
+    {
+      "year": "2022",
+      "make": "WELLS CARG",
+      "model": "TRAILER",
+      "vin": null,
+      "vehiclePremium": 373.0,
+      "vehicleCost": 14600.0
+    },
+    {
+      "year": "2021",
+      "make": "FORD",
+      "model": "TRANSIT",
+      "vin": null,
+      "vehiclePremium": 2226.0,
+      "vehicleCost": 40545.0
+    },
+    {
+      "year": "2019",
+      "make": "AUDI",
+      "model": "Q7",
+      "vin": null,
+      "vehiclePremium": 1801.0,
+      "vehicleCost": 62250.0
+    }
+  ]
+}

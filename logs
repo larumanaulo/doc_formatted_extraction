@@ -1,0 +1,385 @@
+venv➜  ins python3 main.py
+Processing document: ./data/doc_1.pdf
+Attempt 1 | Score: 65
+Summary: The extraction was structurally valid but had several issues with completeness and accuracy. Some fields were missing, such as the personal injury protection limit and symbol. There were mismatches in the limits for liability, uninsured, and underinsured motorist coverages, which were not accurately reflected as CSL or BI ONLY. Additionally, extra fields like hired auto and non-owned auto liability were included without basis in the document.
+Suggestions to improve the prompt:
+ - Add: 'CSL' as a synonym for 'Combined Single Limit' under liability coverage terms.
+ - Clarify: 'Liability limits may be listed as 'BI ONLY' or 'CSL' — ensure accurate reflection in extraction.'
+ - Emphasize: 'If Personal Injury Protection limit or symbol is missing, return null instead of omitting.'
+ - Add: 'Hired Auto and Non-Owned Auto Liability should only be extracted if explicitly mentioned in the document.'
+ - Clarify: 'Symbols may be listed separately or within the same line as their respective coverage limits.'
+Attempt 2 | Score: 70
+Summary: The extraction was mostly complete but had several issues with missing fields and incorrect values. Some fields were incorrectly marked as null or included when not present in the document.
+Suggestions to improve the prompt:
+ - Add: 'CSL' as a synonym for 'Combined Single Limit' under liability coverage terms.
+ - Clarify: 'Vehicle rows may span multiple lines if VIN or cost data is long — always parse full line.'
+ - Emphasize: 'If Medical Payments, UM/UIM, or PIP are missing entirely, return null instead of omitting.'
+ - Add: 'Driver license fields may be labeled as 'Lic. No.', 'DL#', or may be suppressed entirely.'
+Attempt 3 | Score: 70
+Summary: The extraction was structurally valid but had several completeness issues with missing fields and inaccuracies in the extracted values for limits and symbols. Some fields were incorrectly marked as present or with incorrect values.
+Suggestions to improve the prompt:
+ - Add: 'CSL' as a synonym for 'Combined Single Limit' under liability coverage terms.
+ - Clarify: 'Symbols may be listed in a separate table or section — ensure cross-referencing with coverage names.'
+ - Emphasize: 'If Medical Payments, UM/UIM, or PIP are missing entirely, return null instead of omitting.'
+ - Add: 'Driver license fields may be labeled as 'Lic. No.', 'DL#', or may be suppressed entirely.'
+ - Clarify: 'Coverage limits and symbols may be presented in different formats, such as numeric ranges or textual descriptions — ensure consistent interpretation.'
+ - Add: 'For missing headers or unclear sections, prioritize context clues from surrounding text to identify relevant fields.'
+ - Clarify: 'Redacted or suppressed data should be marked as null, not guessed or inferred.'
+Attempt 1 | Score: 20
+Summary: The extraction is severely incomplete, missing numerous fields such as liability limits, vehicle information, and policy details. The JSON only contains a single driver entry with minimal information, failing to capture the extensive data present in the document.
+Suggestions to improve the prompt:
+ - Add: 'Liability Limits' may also be labeled as 'Coverage Limits' or 'Policy Limits'.
+ - Clarify: 'Vehicle information may be located under sections titled "Vehicle Details" or "Auto Information".'
+ - Emphasize: 'If policy details such as policy number or effective dates are missing, return null instead of omitting.'
+ - Add: 'Driver information may be spread across multiple lines; ensure all relevant data is captured.'
+ - Clarify: 'The section headers for driver information may be missing; look for keywords like "Driver" or "Operator" within the text.'
+ - Add: 'Policy details may be labeled as "Policy Info", "Coverage Details", or "Insurance Information".'
+Attempt 2 | Score: 20
+Summary: The extraction is severely incomplete, capturing only a single driver with minimal information. Key fields such as liability limits, coverage details, vehicle information, and policy specifics are missing. The JSON structure does not reflect the complexity and details present in the source document.
+Suggestions to improve the prompt:
+ - Add: 'Liability Limits' may be labeled as 'Liability Coverage', 'Liability Cap', or 'Liability Limitations'.
+ - Clarify: 'Vehicle information may be spread across multiple lines; ensure to capture make, model, and VIN completely.'
+ - Add: 'Coverage details may be under headings such as 'Coverage Information', 'Insurance Details', or 'Policy Coverage'.'
+ - Emphasize: 'If policy specifics like policy number or effective dates are missing, return null instead of omitting.'
+ - Clarify: 'Driver information may appear under 'Operator Details', 'Driver Info', or 'Personnel'.'
+ - Add: 'Policy specifics may include terms like 'Policy ID', 'Contract Number', or 'Agreement ID'.'
+Attempt 3 | Score: 20
+Summary: The extraction is severely incomplete, capturing only driver information with missing critical fields such as liability limits, vehicle information, coverage details, and policy dates. The JSON structure is not reflective of the document's complexity and lacks essential data points.
+Suggestions to improve the prompt:
+ - Add: 'Liability Limits' may be labeled as 'Liability Coverage' or 'Liability Limits' and should include CSL if present.
+ - Clarify: 'Vehicle information may appear under sections titled 'Vehicle Schedule', 'Covered Autos', or 'Vehicle Details'.'
+ - Add: 'Coverage details may be labeled as 'Coverage Summary', 'Policy Coverage', or 'Insurance Coverage'.'
+ - Clarify: 'Policy dates may be found under 'Policy Period', 'Effective Dates', or 'Coverage Dates'.'
+ - Emphasize: 'If any section such as liability limits, vehicle information, or coverage details is missing, return null for those fields instead of omitting them.'
+ - Add: 'Policy numbers may be labeled as 'Policy No.', 'Policy #', or 'Policy ID'.'
+Attempt 1 | Score: 65
+Summary: The extraction was incomplete, missing several fields such as medical payments, uninsured/underinsured motorist limits, and policy dates. Additionally, there were mismatches in liability limits and deductibles, and some vehicle costs were incorrectly extracted or missing.
+Suggestions to improve the prompt:
+ - Add: 'Med Pay', 'UM/UIM', and 'PIP' as synonyms for medical payments and uninsured/underinsured motorist limits.
+ - Clarify: 'Policy dates may be labeled as 'Effective Date' or 'Expiration Date' and should be extracted even if not under a specific header.'
+ - Emphasize: 'If liability limits or deductibles are not explicitly stated, return null instead of guessing values.'
+ - Add: 'Vehicle cost may be labeled as 'Value', 'Cost', or 'Purchase Price' and can appear in different formats.'
+ - Clarify: 'Vehicle information may span multiple lines; ensure all related data is captured even if separated by line breaks.'
+Attempt 2 | Score: 65
+Summary: The extraction captures vehicle details but misses several critical fields such as medical payments, UM/UIM limits, and liability limits. VINs are inaccurately repeated, and vehicle costs are inconsistently extracted.
+Suggestions to improve the prompt:
+ - Add: 'CSL' as a synonym for 'Combined Single Limit' under liability coverage terms.
+ - Clarify: 'Vehicle rows may span multiple lines if VIN or cost data is long — always parse full line.'
+ - Emphasize: 'If Medical Payments, UM/UIM, or PIP are missing entirely, return null instead of omitting.'
+ - Add: 'Driver license fields may be labeled as 'Lic. No.', 'DL#', or may be suppressed entirely.'
+ - Clarify: 'Ensure VINs are unique and not repeated for different vehicles.'
+ - Add: 'Vehicle costs may be labeled as 'Value', 'Cost', or 'Price' and may appear in different sections.'
+Attempt 3 | Score: 70
+Summary: The extraction captures vehicle information but misses several key fields such as liability limits and UM/UIM coverage. There are also mismatches in vehicle costs due to missing deductible information. The structure is mostly correct but incomplete.
+Suggestions to improve the prompt:
+ - Add: 'Liability Limits' and 'UM/UIM Coverage' as fields to extract with synonyms such as 'Liability Coverage' and 'Uninsured/Underinsured Motorist Coverage'.
+ - Clarify: 'Vehicle cost may be listed with or without deductible information — always parse cost separately from deductible.'
+ - Emphasize: 'If liability limits or UM/UIM coverage are missing entirely, return null instead of omitting.'
+ - Add: 'Deductible information may be labeled as 'Deductible', 'Deduct.', or 'Deductible Amount'.'
+Coverage extraction result: {'drivers': [{'fullName': 'UNKNOWN', 'dateOfBirth': 'N/A', 'licenseNumber': None}]}
+Successfully extracted data from ./data/doc_1.pdf
+Processing document: ./data/doc_3.PDF
+Attempt 1 | Score: 65
+Summary: The extraction was partially complete with several missing fields, particularly optional coverages like medical payments and personal injury protection. There were also mismatches in the symbols for liability, uninsured, and underinsured motorist coverages, which should reflect both symbols 8 and 9.
+Suggestions to improve the prompt:
+ - Add: 'CSL' as a synonym for 'Combined Single Limit' under liability coverage terms.
+ - Clarify: 'Symbols for liability, uninsured, and underinsured motorist coverages should include both symbols 8 and 9.'
+ - Emphasize: 'If Medical Payments, UM/UIM, or PIP are missing entirely, return null instead of omitting.'
+ - Add: 'Medical Payments may also be referred to as 'MedPay' or 'Med. Payments'.'
+ - Clarify: 'Personal Injury Protection may be abbreviated as 'PIP' or 'Pers. Inj. Prot.''
+Attempt 2 | Score: 65
+Summary: The extraction is partially complete and accurate. Several optional fields like medical payments and personal injury protection are missing. There are also mismatches in the symbols for liability, uninsured, and underinsured motorist coverage, which should include both symbols 8 and 9.
+Suggestions to improve the prompt:
+ - Add: 'CSL' as a synonym for 'Combined Single Limit' under liability coverage terms.
+ - Clarify: 'Symbols for liability, uninsured, and underinsured motorist coverage should include both symbols 8 and 9.'
+ - Emphasize: 'If Medical Payments, UM/UIM, or PIP are missing entirely, return null instead of omitting.'
+ - Add: 'Medical Payments may also be referred to as 'MedPay' or 'Medical Payment Coverage'.'
+ - Clarify: 'Symbols may be listed at the bottom of the document or in a separate section — ensure to cross-reference.'
+Attempt 3 | Score: 65
+Summary: The extraction was structurally valid but incomplete, missing several optional fields such as medical payments and PIP. Additionally, there were mismatches in symbols for liability, uninsured, and underinsured motorist coverages.
+Suggestions to improve the prompt:
+ - Add: 'CSL' as a synonym for 'Combined Single Limit' under liability coverage terms.
+ - Clarify: 'Symbols may be listed as numbers, letters, or combinations thereof, and may appear in separate columns.'
+ - Emphasize: 'If Medical Payments, UM/UIM, or PIP are missing entirely, return null instead of omitting.'
+ - Add: 'Medical Payments may also be referred to as 'MP' or 'MedPay'.'
+ - Clarify: 'For missing headers or suppressed data, return null instead of guessing values.'
+ - Add: 'Uninsured Motorist may appear as 'UM Coverage' or 'Uninsured Motorist Coverage'.'
+Attempt 1 | Score: 20
+Summary: The extraction is severely incomplete, capturing only an empty driver schedule. Key fields such as insurance limits, deductibles, premiums, and policy details are missing, resulting in a low accuracy and completeness score.
+Suggestions to improve the prompt:
+ - Add: 'Insurance Limits' may also be labeled as 'Coverage Limits', 'Policy Limits', or 'Liability Limits'.
+ - Clarify: 'Deductibles' can appear under sections titled 'Deductible Amounts', 'Policy Deductibles', or 'Coverage Deductibles'.
+ - Add: 'Premiums' might be listed as 'Policy Premium', 'Total Premium', or 'Annual Premium'.
+ - Clarify: 'Policy Details' can be found under headings like 'Policy Information', 'Coverage Details', or 'Insurance Policy'.
+ - Emphasize: 'If any field is missing or redacted, return null instead of omitting the field.'
+ - Add: 'Driver Schedule' section might be embedded within 'Policy Details' or 'Coverage Information' sections.
+Attempt 2 | Score: 20
+Summary: The extraction is severely incomplete, missing numerous critical fields such as liability limits, deductibles, and vehicle information. The JSON structure lacks essential insurance details, rendering it inadequate for representing the document's content.
+Suggestions to improve the prompt:
+ - Add: 'Liability Limits' may also be labeled as 'Coverage Limits' or 'Policy Limits'.
+ - Clarify: 'Deductibles' might appear under sections labeled 'Deductions' or 'Excess'.
+ - Add: 'Vehicle Information' may be found under 'Auto Details' or 'Car Info'.
+ - Emphasize: 'If liability limits, deductibles, or vehicle information are missing entirely, return null instead of omitting.'
+ - Add: 'VIN' may be labeled as 'Vehicle Identification Number' or 'Chassis Number'.
+Attempt 3 | Score: 20
+Summary: The extraction is severely lacking in completeness and accuracy. Key fields such as liability limits, uninsured/underinsured motorist limits, and deductibles are missing. The structure is also incorrect as it includes an unnecessary empty 'drivers' field.
+Suggestions to improve the prompt:
+ - Add: 'Liability Limits' may be referred to as 'Liability Coverage' or 'Liability Insurance'.
+ - Clarify: 'Uninsured/Underinsured Motorist Limits' can also appear as 'UM/UIM Limits'.
+ - Emphasize: 'If deductibles are not explicitly stated, return null instead of omitting.'
+ - Remove: Unnecessary extraction of 'drivers' field if not present in the document.
+ - Add: 'Deductibles' may be labeled as 'Deductible Amount' or 'Deductible'.
+Attempt 1 | Score: 20
+Summary: The extraction is incomplete and lacks critical fields such as coverage limits, deductibles, premiums, and policy details. The JSON structure is overly simplistic and does not reflect the complexity of the document.
+Suggestions to improve the prompt:
+ - Add: 'Coverage Limits' and 'Deductibles' as fields to extract, ensuring they are included in the JSON structure.
+ - Clarify: 'Policy details may be labeled as 'Policy Info', 'Coverage Summary', or 'Insurance Details'.'
+ - Add: 'Premiums' should be extracted even if labeled as 'Cost', 'Price', or 'Charge'.
+ - Emphasize: 'If coverage limits or deductibles are missing, return null instead of omitting.'
+ - Clarify: 'Vehicle schedule may be presented in a table without headers; ensure to match columns by context.'
+ - Add: 'VIN may be labeled as 'Vehicle ID', 'VIN#', or 'Chassis Number'.'
+ - Emphasize: 'Do not guess values for policy details; return null if not explicitly stated.'
+Attempt 2 | Score: 30
+Summary: The extraction is incomplete and lacks critical fields related to the insurance policy, such as coverage limits, deductibles, and vehicle details. The JSON structure does not reflect the necessary information from the document.
+Suggestions to improve the prompt:
+ - Add: 'Coverage Limits' and 'Deductibles' as key fields to extract alongside vehicle details.
+ - Clarify: 'Vehicle details may appear under headers like "Vehicle Information" or "Auto Details".'
+ - Add: 'Coverage limits may be labeled as "Limit" or "Max Coverage".'
+ - Clarify: 'Deductibles may be listed as "Deductible Amount" or "Deductible".'
+ - Emphasize: 'If coverage limits or deductibles are missing, return null instead of omitting.'
+ - Add: 'Vehicle details may be presented in a table or as a list — ensure all formats are parsed.'
+Attempt 3 | Score: 20
+Summary: The extraction is highly incomplete, missing numerous critical fields such as liability limits, uninsured/underinsured motorist limits, and deductibles. The vehicle details are entirely absent, and the JSON structure is not aligned with the document's information. The extracted JSON does not reflect the document's contents accurately.
+Suggestions to improve the prompt:
+ - Add: 'Liability Limits' and 'Deductibles' as fields to extract, with synonyms like 'Liability Coverage' and 'Deductible Amount'.
+ - Clarify: 'Vehicle details may be embedded in sections labeled as 'Auto Details' or 'Vehicle Information'.'
+ - Emphasize: 'If Uninsured/Underinsured Motorist limits are missing, return null instead of omitting.'
+ - Add: 'Vehicle details may be labeled as 'Auto Specs', 'Car Details', or similar variations.'
+ - Clarify: 'Tables may lack headers; infer structure from context but do not infer data.'
+ - Add: 'For missing vehicle details, explicitly return null rather than leaving fields empty.'
+ - Clarify: 'Redacted data should be marked as null and not guessed.'
+Coverage extraction result: {'driverSchedule': []}
+Processing document: ./data/doc_2.pdf
+Attempt 1 | Score: 65
+Summary: The extraction was structurally valid but incomplete, missing several fields such as medicalPaymentsLimit and hiredAutoLimit. There were also mismatches in limits for uninsured and underinsured motorist coverage, as well as personal injury protection.
+Suggestions to improve the prompt:
+ - Add: 'Med Pay' and 'Medical Pay' as synonyms for 'Medical Payments' to improve extraction of medicalPaymentsLimit.
+ - Clarify: 'Hired Auto Limit may be listed as 'Hired Auto Liability' or 'Hired Auto Coverage'.'
+ - Emphasize: 'If uninsured or underinsured motorist limits are mismatched, prioritize returning null over incorrect data.'
+ - Add: 'Personal Injury Protection may be labeled as 'PIP' or 'No-Fault Coverage'.'
+ - Clarify: 'Symbols may be embedded within coverage descriptions or listed in a separate section — ensure to cross-reference.'
+ - Emphasize: 'If hiredAutoLimit is missing, return null instead of omitting.'
+Attempt 2 | Score: 65
+Summary: The extraction was structurally valid but missed several fields and had mismatches in limits for uninsured and underinsured motorist coverage. Some fields were incorrectly marked as null, and extra fields were included that were not present in the document.
+Suggestions to improve the prompt:
+ - Add: 'UM/UIM' as a synonym for 'Uninsured/Underinsured Motorist' to improve coverage terminology.
+ - Clarify: 'Coverage limits and symbols may be listed in separate columns or rows — ensure both are captured.'
+ - Emphasize: 'If coverage fields like Medical Payments, UM/UIM, or PIP are absent, return null rather than omitting the field.'
+ - Add: 'Symbols may be labeled as 'Sym', 'Symbol', or 'Code' and should be matched with their respective coverage.'
+ - Clarify: 'Extra fields not explicitly listed in the prompt should be ignored to prevent incorrect data inclusion.'
+Attempt 3 | Score: 65
+Summary: The extraction was structurally valid but incomplete, with several missing fields and mismatches in limits for uninsured, underinsured, and personal injury protection coverages.
+Suggestions to improve the prompt:
+ - Add: 'UM/UIM' as a combined term for Uninsured/Underinsured Motorist coverage to capture variations where they are listed together.
+ - Clarify: 'Coverage limits may be listed in tables without explicit headers — parse based on context and proximity to known terms.'
+ - Emphasize: 'If Uninsured, Underinsured, or Personal Injury Protection limits are not found, return null instead of guessing based on similar terms.'
+ - Add: 'Personal Injury Protection may also be referred to as 'No-Fault Coverage' or 'PIP Coverage'.'
+ - Clarify: 'Symbols for coverage types may be listed in a separate section or appendix — ensure cross-referencing with coverage limits.'
+Attempt 1 | Score: 15
+Summary: The extracted JSON is almost entirely incomplete, missing numerous critical fields such as liability limits, deductibles, policy details, and coverage information. The only field present is an empty driver schedule, which does not reflect the document's content.
+Suggestions to improve the prompt:
+ - Clarify: 'Ensure extraction of liability limits, deductibles, and policy details as separate fields, even if they appear under different headings.'
+ - Add: 'Include synonyms for liability limits such as 'Liability Coverage', 'Liability Limits', or 'Liability Protection'.'
+ - Expand: 'Recognize variations in deductible terminology, such as 'Deductible', 'Deduct.', or 'Ded.' in the document.'
+ - Add: 'Policy details may be labeled as 'Policy Info', 'Policy Details', or 'Policy Summary'.'
+ - Clarify: 'Coverage information might be found under headings like 'Coverage', 'Insurance Coverage', or 'Coverage Details'.'
+ - Emphasize: 'If any critical field such as liability limits or deductibles is missing, return null instead of omitting.'
+Attempt 2 | Score: 20
+Summary: The extraction is severely lacking in completeness and accuracy. The JSON output is almost empty, missing critical fields such as liability limits, uninsured motorist limits, and deductibles, which are clearly present in the document. The structure is also not followed as expected, with no vehicle or policy information extracted.
+Suggestions to improve the prompt:
+ - Add: 'Liability Limits' and 'Uninsured Motorist Limits' as key fields to extract, ensuring they are included in the JSON output.
+ - Clarify: 'Deductibles should be extracted even if they appear under different headers such as 'Deductible Amount' or 'Deductible Value'.'
+ - Add: 'Policy information may be labeled as 'Policy Details', 'Coverage Information', or 'Insurance Policy'.'
+ - Emphasize: 'If any critical field like liability limits or deductibles is missing, return null instead of omitting.'
+ - Clarify: 'Vehicle information should be extracted even if it spans multiple lines or pages.'
+ - Add: 'Consider variations like 'UM Limits' or 'UIM Limits' for Uninsured Motorist Limits.'
+ - Clarify: 'If a section is missing headers but contains relevant data, attempt to extract based on context and content.'
+Attempt 3 | Score: 20
+Summary: The extracted JSON is severely incomplete, containing only an empty drivers array. Key fields such as policy details, coverage limits, and deductibles are missing, leading to a low score.
+Suggestions to improve the prompt:
+ - Add: 'Policy Details' and 'Coverage Limits' sections may be labeled as 'Policy Information', 'Coverage Summary', or 'Insurance Details'.
+ - Clarify: 'Deductibles may appear under 'Deductible Amounts', 'Deductible Details', or 'Coverage Deductibles'.
+ - Emphasize: 'If policy details, coverage limits, or deductibles are missing entirely, return null instead of omitting.'
+ - Add: 'Driver license fields may be labeled as 'Lic. No.', 'DL#', or may be suppressed entirely.'
+ - Clarify: 'Policy details, coverage limits, and deductibles should be extracted even if they appear in non-standard formats or locations.'
+Attempt 1 | Score: 20
+Summary: The extraction is severely incomplete, capturing none of the relevant insurance details such as coverage limits, deductibles, or policy information. The JSON structure is present but lacks any meaningful data, failing to reflect the document's content.
+Suggestions to improve the prompt:
+ - Add: 'CSL' as a synonym for 'Combined Single Limit' under liability coverage terms.
+ - Clarify: 'Vehicle rows may span multiple lines if VIN or cost data is long — always parse full line.'
+ - Emphasize: 'If Medical Payments, UM/UIM, or PIP are missing entirely, return null instead of omitting.'
+ - Add: 'Driver license fields may be labeled as 'Lic. No.', 'DL#', or may be suppressed entirely.'
+ - Clarify: 'If coverage limits or deductibles are not explicitly listed, return null instead of guessing.'
+ - Add: 'Policy information may be labeled under 'Policy No.', 'Policy Number', or 'Policy ID'.'
+ - Clarify: 'When encountering redacted data, return 'REDACTED' instead of null.'
+ - Emphasize: 'Ensure all extracted data aligns with the document's structure, especially when dealing with complex layouts.'
+Attempt 2 | Score: 10
+Summary: The extraction is severely incomplete, capturing none of the required fields from the document. The JSON structure is empty, lacking any representation of the insurance details present in the document.
+Suggestions to improve the prompt:
+ - Add: 'CSL' as a synonym for 'Combined Single Limit' under liability coverage terms.
+ - Clarify: 'Vehicle rows may span multiple lines if VIN or cost data is long — always parse full line.'
+ - Emphasize: 'If Medical Payments, UM/UIM, or PIP are missing entirely, return null instead of omitting.'
+ - Add: 'Driver license fields may be labeled as 'Lic. No.', 'DL#', or may be suppressed entirely.'
+Attempt 3 | Score: 20
+Summary: The extraction is highly incomplete, with almost all relevant fields missing. The JSON structure lacks any extracted data from the document, including crucial fields like liability limits, coverage types, and policy details.
+Suggestions to improve the prompt:
+ - Add: 'Liability Limits' and 'Coverage Types' as key fields to extract, ensuring they are not overlooked in future attempts.
+ - Clarify: 'Policy details may be labeled as 'Policy Information', 'Policy Details', or 'Coverage Summary'.'
+ - Add: 'Include synonyms for vehicle fields such as 'Yr' for 'year', 'Mk' for 'make', and 'Mdl' for 'model'.'
+ - Clarify: 'For table structures, ensure each row is fully parsed even if it spans multiple lines.'
+ - Emphasize: 'If key fields like liability limits or coverage types are missing, return null instead of omitting.'
+ - Add: 'Recognize redacted data by common placeholders such as 'XXXX' or '----' and treat them as null.'
+Coverage extraction result: {'drivers': []}
+Successfully extracted data from ./data/doc_2.pdf
+Processing document: ./data/doc_5.pdf
+Attempt 1 | Score: 80
+Summary: The extraction was mostly complete but missed several fields that should be null. Additionally, there were extra fields for underinsured motorist coverage that were not present in the document.
+Attempt 1 | Score: 40
+Summary: The extraction is incomplete, missing several key fields such as liability limits, vehicle details, and premium information. The JSON structure is limited to driver information without capturing the broader policy details.
+Suggestions to improve the prompt:
+ - Add: 'Liability Limits' may also be referred to as 'Coverage Limits' or 'Policy Limits'.
+ - Clarify: 'Vehicle details may be found under sections titled 'Vehicle Information', 'Auto Details', or 'Car Specs'.
+ - Emphasize: 'If premium information is not explicitly listed, return null instead of attempting to calculate or infer.'
+ - Add: 'Premium fields might be labeled as 'Total Premium', 'Policy Cost', or 'Insurance Fee'.'
+ - Clarify: 'Policy details may be spread across multiple pages — ensure all pages are parsed for comprehensive data capture.'
+ - Emphasize: 'Do not omit fields if headers are missing; return null for missing data instead.'
+Attempt 2 | Score: 40
+Summary: The extraction was incomplete, missing several key fields such as liability limits, vehicle details, and premium information. The JSON structure only captured driver names without additional details or other policy information.
+Suggestions to improve the prompt:
+ - Add: 'Liability Limits' may also be referred to as 'Coverage Limits' or 'Policy Limits'.
+ - Clarify: 'Vehicle details might be listed under 'Vehicle Information', 'Auto Details', or 'Car Specs'.'
+ - Add: 'Premium information may appear under 'Cost', 'Price', or 'Payment Details'.'
+ - Emphasize: 'If any section like liability limits or vehicle details is missing, return null for those fields instead of omitting them.'
+ - Clarify: 'Driver names may be listed with titles or initials, ensure full names are extracted.'
+ - Add: 'Policy numbers might be labeled as 'Policy ID', 'Policy #', or simply 'ID'.'
+Attempt 3 | Score: 40
+Summary: The extraction is incomplete, capturing only driver names without any vehicle, coverage, or policy details. Numerous fields are missing, including liability limits, deductibles, and premium information, leading to a low score.
+Suggestions to improve the prompt:
+ - Clarify: 'Extract vehicle details including make, model, year, and VIN if available, even if spread across multiple lines.'
+ - Add: 'Liability limits may be labeled as 'Liab. Limit', 'Liability Coverage', or 'CSL'.'
+ - Emphasize: 'Return null for missing deductibles and premium information instead of omitting these fields.'
+ - Clarify: 'Policy details may be found under sections titled 'Policy Information', 'Coverage Details', or 'Insurance Summary'.'
+ - Add: 'Premium information may be labeled as 'Total Premium', 'Policy Premium', or 'Total Cost'.'
+Attempt 1 | Score: 70
+Summary: The extraction captured vehicle details accurately but missed several critical fields, including policy limits, coverage symbols, and premium details. The JSON structure is incomplete with missing key information such as liability limits, medical payment symbols, and uninsured/underinsured motorist coverage details. Additionally, the extracted JSON lacks policy and broker information, as well as payment plan options.
+Suggestions to improve the prompt:
+ - Add: 'Liability Limits' and 'Policy Limits' as key fields with synonyms like 'Coverage Limits' and 'Limits of Liability'.
+ - Clarify: 'Coverage symbols may be labeled as 'Sym.', 'Cov. Sym.', or 'Coverage Symbols'.'
+ - Emphasize: 'If premium details are missing, return null instead of omitting the field.'
+ - Add: 'Medical Payments may be referred to as 'Med Pay' or 'Med Payments'.'
+ - Clarify: 'Uninsured/Underinsured Motorist coverage may be abbreviated as 'UM/UIM'.'
+ - Add: 'Policy information may be under 'Policy Details', 'Policy Info', or 'Policy Summary'.'
+ - Clarify: 'Broker information might be labeled as 'Agent/Broker' or 'Insurance Broker'.'
+ - Add: 'Payment plan options can be found under 'Payment Terms', 'Payment Options', or 'Plan Details'.'
+Attempt 2 | Score: 70
+Summary: The extraction was partially complete, capturing vehicle details but missing several key fields such as liability limits, deductibles, and policy information. Some optional coverages and driver schedules were also not extracted. The structure was mostly correct, but there were extra fields like VIN that were not present in the document.
+Suggestions to improve the prompt:
+ - Add: 'Liability Limits' and 'Deductibles' as key fields to extract, ensuring they are not overlooked.
+ - Clarify: 'Policy information may be labeled as 'Policy Details', 'Coverage Summary', or 'Insurance Information'.'
+ - Emphasize: 'If optional coverages like Medical Payments or UM/UIM are missing, return null instead of omitting.'
+ - Add: 'Driver schedules may be labeled as 'Driver List', 'Authorized Drivers', or 'Driver Information'.'
+ - Clarify: 'VIN field may be absent; if not found, explicitly return null.'
+ - Add: 'Liability coverage may be listed under terms like 'Bodily Injury' or 'Property Damage'.'
+Attempt 3 | Score: 70
+Summary: The extraction captures the vehicle details accurately but misses several key insurance coverage fields such as liability limits, medical payment symbols, and deductibles. Additionally, the extracted JSON includes a VIN field which is not applicable here, and there are issues with differentiating premiums for identical vehicle entries.
+Suggestions to improve the prompt:
+ - Add: 'Liability Limits' and 'Medical Payment Symbols' as key fields to extract, ensuring coverage details are captured.
+ - Clarify: 'Deductibles may be labeled as 'Deductible', 'Deduct.', or 'Deductible Amount'.'
+ - Remove: 'VIN field' from extraction as it is not applicable in this context.
+ - Clarify: 'Differentiate premiums for identical vehicle entries by matching with unique identifiers like 'vehicle make' and 'model'.'
+ - Emphasize: 'If key insurance coverage fields like liability limits are missing, return null instead of omitting.'
+Coverage extraction result: {'drivers': [{'fullName': 'Brad Pitt', 'dateOfBirth': None, 'licenseNumber': None}, {'fullName': 'Lucy Liu', 'dateOfBirth': None, 'licenseNumber': None}, {'fullName': 'Adam Brody', 'dateOfBirth': None, 'licenseNumber': None}, {'fullName': 'Blake Lively', 'dateOfBirth': None, 'licenseNumber': None}, {'fullName': 'Jake Tapper', 'dateOfBirth': None, 'licenseNumber': None}, {'fullName': 'Robin Roberts', 'dateOfBirth': None, 'licenseNumber': None}]}
+Successfully extracted data from ./data/doc_5.pdf
+Processing document: ./data/doc_4.pdf
+Attempt 1 | Score: 65
+Summary: The extraction was partially complete but had significant issues with missing fields and mismatched values, particularly with symbols and limits that were supposed to be referenced from a schedule.
+Suggestions to improve the prompt:
+ - Add: 'CSL' as a synonym for 'Combined Single Limit' under liability coverage terms.
+ - Clarify: 'Symbols may be found in separate schedules or tables; ensure cross-referencing with coverage limits.'
+ - Emphasize: 'If Medical Payments, UM/UIM, or PIP are missing entirely, return null instead of omitting.'
+ - Add: 'Liability symbols might be labeled as 'Sym.' or 'Symbol' and could be in a separate section.'
+ - Clarify: 'Coverage limits may be listed with currency symbols or as numeric values only; ensure correct parsing.'
+ - Add: 'Uninsured Motorist may be listed as 'UM', 'Unins. Motorist', or 'Uninsured Mtr.' in various formats.'
+ - Emphasize: 'Return null for any field where data is redacted or suppressed, rather than guessing.'
+Attempt 2 | Score: 65
+Summary: The extraction captures some key fields but misses several fields and symbols that are present in the document. There are also mismatches in some of the extracted values, particularly for limits and symbols that should refer to a schedule.
+Suggestions to improve the prompt:
+ - Add: 'CSL' as a synonym for 'Combined Single Limit' under liability coverage terms.
+ - Clarify: 'Symbols may be listed in a separate schedule; ensure cross-reference with coverage names.'
+ - Emphasize: 'If any limit or symbol is missing, return null instead of attempting to infer values.'
+ - Add: 'Medical Payments fields may also be labeled as 'MedPay' or 'Med. Payments'.'
+ - Clarify: 'Coverage limits and symbols may be presented in tables; ensure to parse table headers and align with corresponding values.'
+ - Add: 'For Uninsured/Underinsured Motorist, consider 'UM/UIM' as a combined term.'
+ - Clarify: 'Redacted or suppressed data should be explicitly marked as null, not omitted.'
+ - Emphasize: 'Ensure that all extracted values are directly from the document, avoiding assumptions or external data.'
+Attempt 3 | Score: 60
+Summary: The extraction is incomplete, missing several fields that are present in the document. There are also mismatches in the symbols for liability insurance and medical payments. The structure is mostly correct, but the completeness and accuracy are lacking.
+Suggestions to improve the prompt:
+ - Add: 'CSL' as a synonym for 'Combined Single Limit' under liability coverage terms.
+ - Clarify: 'Liability and Medical Payments symbols may use non-standard symbols like 'L' or 'M' — ensure correct mapping.'
+ - Emphasize: 'If Medical Payments, UM/UIM, or PIP are missing entirely, return null instead of omitting.'
+ - Add: 'Medical Payments may also appear as 'Med. Payments' or 'MedPay'.'
+ - Clarify: 'Symbols may be listed in a separate section or table — ensure cross-referencing with coverage limits.'
+Attempt 1 | Score: 20
+Summary: The extracted JSON is almost entirely incomplete, capturing none of the essential fields from the document. Critical information such as named insured, policy number, coverage limits, premiums, and vehicle details are missing. The structure is valid but lacks all necessary content.
+Suggestions to improve the prompt:
+ - Add: 'Named Insured' may also appear as 'Policyholder' or 'Insured Name'.
+ - Clarify: 'Policy Number' may be labeled as 'Policy No.' or 'Pol. #'.
+ - Expand: Include 'Coverage Limits' under terms such as 'Liability Limits' or 'Policy Limits'.
+ - Add: 'Premium' may be referred to as 'Total Cost' or 'Insurance Premium'.
+ - Clarify: 'Vehicle Details' may be structured in tables without headers, ensure to capture VIN, make, and model.
+ - Emphasize: 'If any field is missing or redacted, return null instead of omitting the field.'
+Attempt 2 | Score: 10
+Summary: The extracted JSON is almost entirely incomplete, missing all critical fields and details from the document. The structure is not reflective of the document's content, resulting in a very low score.
+Suggestions to improve the prompt:
+ - Add: 'Driver List' and 'Driver Information' as additional section titles for driver schedule.
+ - Clarify: 'Driver names may appear in different formats, such as 'Last, First' or 'First Last'.'
+ - Emphasize: 'If a driver's license number is partially redacted, return null instead of attempting to reconstruct.'
+ - Add: 'Date of birth may be labeled as 'DOB', 'Birth Date', or 'Date of Birth'.'
+ - Clarify: 'Driver details may be spread across multiple lines; ensure to capture all relevant information for each driver.'
+ - Emphasize: 'If the section header is missing, but driver details are present, still attempt to extract them under "driverSchedule".'
+Attempt 3 | Score: 20
+Summary: The extraction is severely incomplete, capturing only an empty 'drivers' array without any other relevant policy information or structure. Critical fields such as policy number, named insured, coverage details, and vehicle information are missing.
+Suggestions to improve the prompt:
+ - Add: 'Policy Number' may appear as 'Policy No.', 'Pol. #', or 'Policy ID'.
+ - Clarify: 'Named Insured' can be found under 'Insured Name', 'Policyholder', or 'Primary Insured'.
+ - Expand: Include variations for vehicle information such as 'Vehicle ID', 'VIN', or 'Vehicle Identification Number'.
+ - Emphasize: 'Coverage details' should include terms like 'Liability', 'Collision', 'Comprehensive', and their abbreviations.
+ - Add: 'Driver Schedule' section may be embedded within a larger table or list, ensure to parse nested structures.
+Attempt 1 | Score: 60
+Summary: The extraction captures vehicle details accurately but misses several insurance coverage limits and symbols. There are also issues with duplicate VINs across different vehicles, which is unrealistic and indicates a potential extraction error.
+Suggestions to improve the prompt:
+ - Add: 'CSL' as a synonym for 'Combined Single Limit' under liability coverage terms.
+ - Clarify: 'Vehicle rows may span multiple lines if VIN or cost data is long — always parse full line.'
+ - Emphasize: 'If Medical Payments, UM/UIM, or PIP are missing entirely, return null instead of omitting.'
+ - Add: 'Driver license fields may be labeled as 'Lic. No.', 'DL#', or may be suppressed entirely.'
+ - Clarify: 'Ensure unique VINs for each vehicle; duplicate VINs across different entries should be flagged as errors.'
+ - Expand: 'Include synonyms for coverage limits such as 'Liability', 'Collision', 'Comprehensive' to ensure broader term recognition.'
+ - Add: 'Symbols may be represented as numbers, letters, or combinations (e.g., '1', 'B', '1A') — ensure all formats are captured.'
+Attempt 2 | Score: 65
+Summary: The extraction captures the vehicle details accurately but misses several key insurance fields such as liability limits and medical payments. There are also mismatches in vehicle premiums for some entries, and an extra field was noted for a vehicle premium not present in the document.
+Suggestions to improve the prompt:
+ - Add: 'Liability Limits' may also be referred to as 'Liability Coverage' or 'Liability Insurance'.
+ - Clarify: 'Medical Payments' may appear as 'Med Pay' or 'Med Payments'.
+ - Emphasize: 'If a vehicle premium is not explicitly listed, return null instead of creating an entry.'
+ - Add: 'Vehicle premiums may be labeled as 'Premium', 'Cost', or 'Charge' and may appear in separate columns or rows.'
+ - Clarify: 'If a field is redacted or suppressed, return null instead of omitting the field.'
+Attempt 3 | Score: 65
+Summary: The extraction captures the vehicle details accurately but misses several key insurance fields such as liability limits and medical payments. Some fields are repeated unnecessarily, indicating potential redundancy in the extraction process.
+Suggestions to improve the prompt:
+ - Add: 'Liability Limits' and 'Medical Payments' as key fields to extract, ensuring these are included in the JSON output.
+ - Clarify: 'Liability Limits' may be labeled as 'Liab. Limits', 'Liability Coverage', or 'Liability Ins.'
+ - Clarify: 'Medical Payments' may appear as 'Med Pay', 'Med Payments', or 'Medical Coverage'.
+ - Emphasize: 'If liability limits or medical payments are missing, return null instead of omitting.'
+ - Add: 'Avoid repeating fields by ensuring each field is extracted only once per vehicle entry.'
+Coverage extraction result: {'drivers': []}
